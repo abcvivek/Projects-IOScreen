@@ -9,6 +9,121 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+ crossorigin="anonymous"></script>
+
+
+  <!-- custom styles for the page --> 
+
+<style>
+      
+* {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+#dashboard_sidenav {
+  height:100%;
+  width:18%;
+  position: fixed;
+  overflow-x: hidden;
+  background-color: rgb(0,0,0);
+  z-index:1;
+  top:0;
+  left:0;
+  padding-top:80px;
+}
+
+#dashboard_sidenav a {
+  display:block;
+  padding-top:30px;
+  padding-left:30px;
+  font-size:19px;
+  color: rgb(255,255,255);
+  text-decoration: none;
+}
+
+#dashboard_sidenav a:hover {
+  text-decoration: none;
+}
+
+
+      
+ .topnav {
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+}
+
+.topnav a,.topnav form {
+  float: left;
+  display: block;
+  color: rgb(255,255,255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+    text-decoration: none;
+    color: rgb(255,255,255);
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.topnav .icon:hover {
+    text-decoration: none;
+    color: rgb(255,255,255);
+}
+
+.jumbotron {
+    margin-left:180px;
+}
+
+
+
+
+
+@media screen and (max-width: 992px) {
+  .topnav a:not(:first-child),.topnav form:not(:first-child) {display: none;}
+  .topnav a.icon,.topnav form.icon {
+    float: right;
+    display: block;
+  }
+  
+  .topnav a.icon {
+      color: rgb(255,255,255);
+   text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a,.topnav.responsive form  {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  
+  .jumbotron {
+    margin-left:0px;
+}
+
+
+}
+    
+ </style>
+
+
 </head>
 <body>
 
@@ -19,21 +134,21 @@
   <nav class="navbar navbar-inverse navbar-static-top hidden-sm hidden-xs">
     <div class="container-fluid"  style="border-radius:none;">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#" style="color:rgb(255,255,255)!important;font-size:22px;">IO Screen</a>
+        <a class="navbar-brand" href="#" style="color:rgb(255,255,255)!important;font-size:22px;">Your Website Name</a>  <!-- chane the name of your website -->
       </div>
         <ul class="nav navbar-nav navbar-right">
-          <li style="padding-left:10px;"><a href="signup.php">Sign Up</a></li>
+          <li style="padding-left:10px;"><a href="#">Sign Up</a></li>
         </ul>
-        <a href="logout.php"><button class="btn btn-primary navbar-btn navbar-right">Log Out</button></a>
+        <a href="#"><button class="btn btn-primary navbar-btn navbar-right">Log Out</button></a>
   </div>
 </nav>
 </div>
 
 <div class="sidenav hidden-sm hidden-xs" id="dashboard_sidenav">
-  <a href="new_post.php">New Post</a>
-  <a href="dashboard.php">Dashboard</a>
-  <a href="Project_dashboard.php">Project</a>
-  <a href="Blog_dashboard.php">Blog</a>
+  <a href="#">New Post</a>
+  <a href="#">Home</a>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
 </div>
 
 
@@ -42,13 +157,13 @@
 
 <div class="topnav" id="myTopnav" style="margin-bottom:20px;">
 <div class="hidden-lg hidden-md">
-  <a href="#"><strong>IO Screen</strong></a>
-  <a href="new_post.php">New Post</a>
-  <a href="dashboard.php">Dashboard</a>
-  <a href="project_dashboard.php">Project</a>
-  <a href="blog_dashboard.php">Blog</a>
-  <a href="signup.php">Sign Up</a>
-  <a href="logout.php">Log Out</a>
+  <a href="#"><strong>Your Website Name</strong></a>  <!-- change your website name for mobile and tablet version -->
+  <a href="#">New Post</a>
+  <a href="#">Home</a>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Sign Up</a>
+  <a href="#">Log Out</a>
   
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -74,7 +189,7 @@ function myFunction() {
 <div class="container">
   <div class="jumbotron">
 
-<h3 style="margin-top:-25px;"><b>Projects</b></h3>
+<h3 style="margin-top:-25px;"><b>Heading</b></h3> <!-- change the heading name here -->
 
 <table class="table table-striped hidden-sm hidden-xs">
 <thead>
@@ -85,23 +200,44 @@ function myFunction() {
   </tr>
 </thead>
 <tbody>
-  <?php for($i=0;$i<count($data);$i++)
-  {
-  $num=$i+1;
-  echo "<tr>";
-    echo"<td>".$num." </td>";
-    echo"<td>".$data[$i]['title']." </td>";
-    echo "<td>";
-    echo "<a href='edit_post.php?url=".$data[$i]['url']."&category=".$data[$i]['category']."'><button class='btn btn-success btn-sm'>Edit</button></a>";
-    echo "&nbsp";
-    echo "<a href='delete.php?id=".$data[$i]['id']."&category=".$data[$i]['category']."'><button class='btn btn-danger btn-sm'>Delete</button></a>";
-
-    echo "</td>";
-  echo "</tr>";
-  }
-  ?>
+  <tr>
+    <td> 1 </td>
+    <td> First post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    &nbsp
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+<tr>
+    <td> 2 </td>
+    <td> Second post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    &nbsp
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+ <tr>
+    <td> 3 </td>
+    <td> Third post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    &nbsp
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+  <tr>
+    <td> 4 </td>
+    <td> Fourth post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    &nbsp
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+  <tr>
+    <td> 5 </td>
+    <td> Fifth post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    &nbsp
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
 </tbody>
 </table>
+
 
 <table class="table table-striped hidden-lg hidden-md">
 <thead>
@@ -112,27 +248,40 @@ function myFunction() {
   </tr>
 </thead>
 <tbody>
-  <?php for($i=0;$i<count($data);$i++)
-  {
-  $num=$i+1;
-  echo "<tr>";
-    echo"<td>".$num." </td>";
-    echo"<td>".$data[$i]['title']." </td>";
-    echo "<td>";
-    echo "<a href='edit_post.php?url=".$data[$i]['url']."&category=".$data[$i]['category']."'><button class='btn btn-success btn-xs'>Edit</button></a>";
-    echo "<br>";
-    echo "<br>";
-    echo "<a href='delete.php?id=".$data[$i]['id']."&category=".$data[$i]['category']."'><button class='btn btn-danger btn-xs'>Delete</button></a>";
-
-    echo "</td>";
-  echo "</tr>";
-  }
-  ?>
-</tbody>
-</table>
-
+  <tr>
+    <td> 1 </td>
+    <td> First post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    <br>
+    <br>
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+<tr>
+    <td> 2 </td>
+    <td> Second post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    <br>
+    <br>
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+ <tr>
+    <td> 3 </td>
+    <td> Third post  tittle</td>
+    <td><a href="#"><button class='btn btn-success btn-sm'>Edit</button></a>
+    <br>
+    <br>
+    <a href="#"><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+ </tr>
+ </tbody>
+ </table>
   </div>
 </div>
+
+<!-- Crediting us is not mandatory.This footer section can be removed. -->
+
+<footer>
+	<h5 style="text-align: center;"><a href="https://www.ioscreen.in">Designed by IO Screen</a></h5>
+</footer>
 
 
 </body>
