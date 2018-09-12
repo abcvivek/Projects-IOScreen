@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple admin pannel using bootstrap 3</title>  <!-- Title of the websiite can be changed here  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+       <!-- important cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<body style="background-color:rgb(244, 245, 247);">
+
+  <div class="conatiner-fluid">
+
+  <nav class="navbar navbar-inverse navbar-static-top hidden-sm hidden-xs">
+    <div class="container-fluid"  style="border-radius:none;">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="color:rgb(255,255,255)!important;font-size:22px;">IO Screen</a>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li style="padding-left:10px;"><a href="signup.php">Sign Up</a></li>
+        </ul>
+        <a href="logout.php"><button class="btn btn-primary navbar-btn navbar-right">Log Out</button></a>
+  </div>
+</nav>
+</div>
+
+<div class="sidenav hidden-sm hidden-xs" id="dashboard_sidenav">
+  <a href="new_post.php">New Post</a>
+  <a href="dashboard.php">Dashboard</a>
+  <a href="Project_dashboard.php">Project</a>
+  <a href="Blog_dashboard.php">Blog</a>
+</div>
+
+
+<!--mobile navbar-->
+
+
+<div class="topnav" id="myTopnav" style="margin-bottom:20px;">
+<div class="hidden-lg hidden-md">
+  <a href="#"><strong>IO Screen</strong></a>
+  <a href="new_post.php">New Post</a>
+  <a href="dashboard.php">Dashboard</a>
+  <a href="project_dashboard.php">Project</a>
+  <a href="blog_dashboard.php">Blog</a>
+  <a href="signup.php">Sign Up</a>
+  <a href="logout.php">Log Out</a>
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+
+<!--end of mobile navbar-->
+
+
+<div class="container">
+  <div class="jumbotron">
+
+<h3 style="margin-top:-25px;"><b>Projects</b></h3>
+
+<table class="table table-striped hidden-sm hidden-xs">
+<thead>
+  <tr>
+    <th>No</th>
+    <th>Post Title</th>
+    <th>options</th>
+  </tr>
+</thead>
+<tbody>
+  <?php for($i=0;$i<count($data);$i++)
+  {
+  $num=$i+1;
+  echo "<tr>";
+    echo"<td>".$num." </td>";
+    echo"<td>".$data[$i]['title']." </td>";
+    echo "<td>";
+    echo "<a href='edit_post.php?url=".$data[$i]['url']."&category=".$data[$i]['category']."'><button class='btn btn-success btn-sm'>Edit</button></a>";
+    echo "&nbsp";
+    echo "<a href='delete.php?id=".$data[$i]['id']."&category=".$data[$i]['category']."'><button class='btn btn-danger btn-sm'>Delete</button></a>";
+
+    echo "</td>";
+  echo "</tr>";
+  }
+  ?>
+</tbody>
+</table>
+
+<table class="table table-striped hidden-lg hidden-md">
+<thead>
+  <tr>
+    <th>No</th>
+    <th>Post Title</th>
+    <th>options</th>
+  </tr>
+</thead>
+<tbody>
+  <?php for($i=0;$i<count($data);$i++)
+  {
+  $num=$i+1;
+  echo "<tr>";
+    echo"<td>".$num." </td>";
+    echo"<td>".$data[$i]['title']." </td>";
+    echo "<td>";
+    echo "<a href='edit_post.php?url=".$data[$i]['url']."&category=".$data[$i]['category']."'><button class='btn btn-success btn-xs'>Edit</button></a>";
+    echo "<br>";
+    echo "<br>";
+    echo "<a href='delete.php?id=".$data[$i]['id']."&category=".$data[$i]['category']."'><button class='btn btn-danger btn-xs'>Delete</button></a>";
+
+    echo "</td>";
+  echo "</tr>";
+  }
+  ?>
+</tbody>
+</table>
+
+  </div>
+</div>
+
+
+</body>
+</html>
