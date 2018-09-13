@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>New article creation form</title>  <!-- Title of the websiite can be changed here  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+       <!-- important cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+ crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<body style="background-color:rgb(244, 245, 247);"> <!-- Background color of the website  can be changed here -->
+<div class="container">
+
+  <a href="#" ><button class="btn btn-success" style="margin-top:20px;">
+    Back To Dashboard</button></a>
+
+  <form method="post" action="#" enctype="multipart/form-data"> 
+  <br><h3><b>Make A New Post</b></h3><br>
+
+  <p><b>Post Title</b></p>
+  <input type="text" class="form-control" name="title"><br>
+  <p><b>Author Name</b></p>
+  <input type="text" class="form-control" name="author"><br>
+  <p><b>Time & Date (hh:mm AM/PM  dd/mm/yy)</b></p>
+  <input type="text" class="form-control" name="time_date"><br>
+  <p><b>Thumbnail Image</b></p>
+  <input type="file" name="image"><br><br>
+  <p><b>Short Description For SEO</b></p>
+  <input type="text" class="form-control" name="short_desc"><br>
+  <p><b>Article Description </b></p>
+  <textarea class="form-control" id="editor1" name="description" rows="10" cols="60"> </textarea><br>
+  <p><b>Tags</b></p>
+  <input type="text" class="form-control" name="tags"><br>
+  <p><b>Category</b></p>
+  <select name="category" class="form-control">
+  <option value="option1">Option 1</option>
+  <option value="option2">Option 2</option>
+  <option value="option3">Option 3</option>
+</select>
+<br>
+
+<br><input type="submit" style="margin-bottom : 60px;" class="btn btn-success center-block" value="Save">
+</form>
+</div>
+
+
+<!-- Crediting us is not mandatory.This footer section can be removed. -->
+
+<footer>
+	<h5 style="text-align: center;"><a href="https://www.ioscreen.in">Designed by IO Screen</a></h5>
+</footer>
+
+
+</body>
+</html>
