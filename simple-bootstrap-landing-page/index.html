@@ -14,15 +14,11 @@ integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pG
  crossorigin="anonymous"></script>
 
 
-
  <style>
    
    body {
     background: url("background.jpeg") no-repeat center fixed;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 #search_btn {
@@ -50,6 +46,7 @@ integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pG
 
 #dashed_line {
   border-bottom: 2px solid rgb(255,255,255);
+  width : 90%;
 }
 
 #dive_in_btn {
@@ -79,41 +76,49 @@ a:hover {
 }
 
 i {
-  font-size:17px;
+  font-size: 24px;
 }
 #social_buttons {
   text-align:center;
 }
 
-h1 {
-  text-align: center;
-  color:rgb(255,255,255);
-}
-
-h4 {
-  text-align: center;
-  color:rgb(255,255,255);
-  font-weight: bold;
-}
-
 #navbar_brand {
-  text-decoration: none !important;
+  text-decoration: none !important ;
 }
 
 nav ul li a:hover {
 text-decoration: none !important;
 }
 
-@media screen and (min-width: 1200px) {
-  
-  #dashed_line_write {
-    max-width:900px;
-    border-bottom: 2px solid rgb(255,255,255);
-    margin-left:227px;
-  }
+
+
+@media screen and (max-width: 767px) {
+
+#search_btn {
+	position: relative;
+  left : 44%;
 }
 
+#heading {
+	font-size: 50px;
+	margin-top: 40px;
+}
 
+#text {
+	font-size: 16px;
+	letter-spacing: 2px;
+	word-spacing: 3px;
+}
+
+#social_text {
+	font-size: 18px;
+}
+
+i {
+  font-size: 18px;
+}
+
+}
 
  </style>
 
@@ -128,13 +133,13 @@ text-decoration: none !important;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a id="navbar_brand" class="navbar-brand" href="#" style="font-family: Comic Sans MS;">WebGeeks</a>           <!--  Website name can be changed here -->
+      <a id="navbar_brand" class="navbar-brand" href="#" style="font-family: Comic Sans MS;color : rgb(255,255,255);">WebGeeks</a>           <!--  Website name can be changed here -->
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" style="text-align:center;">Courses</a></li>
-        <li><a href="#" style="text-align:center;">Write to us</a></li>
+        <li><a href="#" style="text-align:center;color : rgb(255,255,255);"><strong>Courses</strong></a></li>
+        <li><a href="#" style="text-align:center;color : rgb(255,255,255);"><strong>Write to us</strong></a></li>
         <li>
           <form class="navbar-form navbar-right">
             <div class="form-group">
@@ -146,8 +151,6 @@ text-decoration: none !important;
     </div>
   </div>
 </nav>
-
-
 
 
      <div class="container" id="dashed_line">
@@ -166,8 +169,6 @@ text-decoration: none !important;
             <a href="#" class="btn btn-sq btn-lg btn-default"><i class="fab fa-facebook-f"></i><a>
             <a href="#" class="btn btn-sq btn-lg btn-default"><i class="fab fa-youtube"></i><a>
      </div>
-
-
 
 </body>
 </html>
