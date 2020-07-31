@@ -1,2 +1,1 @@
-# Projects-IOScreen
-Collection of all the projects present at www.ioscreen.in
+Small UI Elements built from HTML,CSS and Bootstrap
